@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People Involved In Incident</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/icons/all.css">
+</head>
+<body>
+<div class="container">
+        <div class="row pt-5 pb-5">
+            <div class="col-lg-12">
+                <div class="col-md-4" style="padding-left: unset;">
+                    <div class="form-group">
+                        <label class="control-label font-weight-bold">Incident ID Number</label>
+                        <input type="text" class="form-control">
+                        <span class="help-block"><small>Incident ID</small></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Add User</button>
+                </div>
+                <form action="#">
+                    <div class="form-body">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h4 class="mb-0">People involved (Collapsable/Detail)</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mt-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label class="control-label font-weight-bold">First Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="First Name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label font-weight-bold">Last Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Last Name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label font-weight-bold">Address</label>
+                                                    <select class="form-control">
+                                                        <option value="">Address, City, State Zip</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label font-weight-bold">Phone Number</label>
+                                                    <input type="text" class="form-control" placeholder="Phone Number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label font-weight-bold">Email</label>
+                                                    <input type="email" class="form-control" placeholder="Email Address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label class="control-label font-weight-bold">User ID Number</label>
+                                                    <input type="text" class="form-control" placeholder="User ID Number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label font-weight-bold">DL Number</label>
+                                                    <input type="text" class="form-control" placeholder="Driver's License Number">
+                                                </div>
+                                                <label class="control-label font-weight-bold">Date of Birth <span><i class="fa fa-question-circle"></i></span></label>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label font-weight-bold">Month</label>
+                                                            <select class="form-control">
+                                                                <option value=""></option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group ">
+                                                            <label class="control-label font-weight-bold">Day</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label font-weight-bold">Year</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body">
+                                                    <label class="control-label font-weight-bold">User Current Classification</label>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input"  type="radio" name="classification" value="" id="victim">
+                                                        <label class="form-check-label" for="victim">
+                                                            Victim
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="classification"   value="" id="witness">
+                                                        <label class="form-check-label" for="witness">
+                                                            Witness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="classification"  value="" id="suspect">
+                                                        <label class="form-check-label" for="suspect">
+                                                            Suspect
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="classification"  value="" id="other">
+                                                        <label class="form-check-label" for="other">
+                                                            Other
+                                                        </label>
+                                                    </div>
+
+                                                <div class="form-group mt-2">
+                                                    <label class="control-label font-weight-bold">Person Type Other</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mt-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4 mt-3">
+                                                        <div class="form-group">
+                                                            <label class="control-label font-weight-bold">Sex</label>
+                                                            <select class="form-control">
+                                                                <option value=""></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="s_grp"   value="" id="protected">
+                                                                    <label class="form-check-label" for="protected">
+                                                                        Protected Class
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="s_grp"  value="" id="disabled">
+                                                                    <label class="form-check-label" for="disabled">
+                                                                        Disabled
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4 mt-3">
+                                                        <label class="control-label font-weight-bold">Race (One or more) <span><i class="fa fa-question-circle"></i></span></label>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="race-1">
+                                                            <label class="form-check-label" for="race-1">
+                                                                American Indian or Alaska Native
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="race-2">
+                                                            <label class="form-check-label" for="race-2">
+                                                                Asian
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="race-3">
+                                                            <label class="form-check-label" for="race-3">
+                                                                Black or African American
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="race-4">
+                                                            <label class="form-check-label" for="race-4">
+                                                                Native Hawaiian or Pacific Islander
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 mt-3">
+                                                        <label class="control-label font-weight-bold">Ethnicity</label>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="ethnicity"   value="" id="ethnicity-1">
+                                                            <label class="form-check-label" for="ethnicity-1">
+                                                                Hispanic or Latino or Spanish Origin
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="ethnicity"  value="" id="ethnicity-2">
+                                                            <label class="form-check-label" for="ethnicity-2">
+                                                                Not Hispanic or Latino or Spanish Origin
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions mt-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--<script type="text/javascript" src="jquery-3.4.1/jquery.min.js"></script>-->
+</body>
+</html>
