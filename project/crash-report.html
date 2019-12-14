@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autos Involved In Incident</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/icons/all.css">
+    <link rel="stylesheet" href="bootstrap/css/dropzone.css">
+    <style>
+        .dropzone {
+            border: 2px dashed #dedede;
+            border-radius: 5px;
+            background: #f5f5f5;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row pt-5 pb-5">
+        <div class="col-lg-12">
+            <form action="#">
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h4 class="mb-0">Crash Report</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="control-label font-weight-bold">Narrative of Accident</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="card mt-3">
+                                <div class="card-header bg-light">
+                                    <h4 class="mb-0">Crash Event Information</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Light Condition</label>
+                                                        <select class="form-control">
+                                                            <option value="">Light Condition</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Weather Condition</label>
+                                                        <select class="form-control">
+                                                            <option value="">Weather Condition</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Road Surface Area</label>
+                                                        <select class="form-control">
+                                                            <option value="">Road Surface Area</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="card bg-light">
+                                                        <div class="card-body">
+                                                            <div class="form-group">
+                                                                <label class="control-label font-weight-bold">Manner of Collision</label>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input"  type="radio" name="collision" value="" id="f-to-r">
+                                                                    <label class="form-check-label" for="f-to-r">Front to Rear</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision"   value="" id="f-to-f">
+                                                                    <label class="form-check-label" for="f-to-f">Front to Front</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision"  value="" id="angle">
+                                                                    <label class="form-check-label" for="angle">Angle</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision"  value="" id="s-s-d">
+                                                                    <label class="form-check-label" for="s-s-d">Sideswipe-Same Direction</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision"  value="" id="s-o-d">
+                                                                    <label class="form-check-label" for="s-s-d">Sideswipe Opposite Direction</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision" value="" id="r-t-s">
+                                                                    <label class="form-check-label" for="r-t-s">Rear to Side</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision" value="" id="r-t-r">
+                                                                    <label class="form-check-label" for="r-t-r">Rear to Rear</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision" value="" id="o-i-n">
+                                                                    <label class="form-check-label" for="o-i-n">Other, in Narrative</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="collision" value="" id="unknown">
+                                                                    <label class="form-check-label" for="unknown">Unknown</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col">
+                                                    <div class="card bg-light">
+                                                        <div class="card-body">
+                                                            <div class="form-group">
+                                                                <label class="control-label font-weight-bold">Non-Collision</label>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input"  type="radio" name="x-collision" value="" id="overturn">
+                                                                    <label class="form-check-label" for="overturn">Overturn/Rollover</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision"   value="" id="fire">
+                                                                    <label class="form-check-label" for="fire">Fire/Extinguisher</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision"  value="" id="immersion">
+                                                                    <label class="form-check-label" for="immersion">Immersion</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision"  value="" id="jackknife">
+                                                                    <label class="form-check-label" for="Jackknife">Jackknife</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision"  value="" id="cargo">
+                                                                    <label class="form-check-label" for="cargo">Cargo/Equipment Loss of Shift</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision" value="" id="fell">
+                                                                    <label class="form-check-label" for="fell">Fell/Jumped from Vehicle</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision" value="" id="thrown">
+                                                                    <label class="form-check-label" for="thrown">Thrown/Falling Object</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision" value="" id="r-i-w">
+                                                                    <label class="form-check-label" for="r-i-w">Ran into Water/canal</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="x-collision" value="" id="o-n-c">
+                                                                    <label class="form-check-label" for="o-n-c">Other Non-Collision</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="card bg-light">
+                                                                <div class="card-body">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Collision Non-Fixed Object</label>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"  type="radio" name="non-fixed" value="" id="pedestrian">
+                                                                            <label class="form-check-label" for="pedestrian">Pedestrian</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed"   value="" id="p-cycle">
+                                                                            <label class="form-check-label" for="p-cycle">Pedal Cycle</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed"  value="" id="r-vehicle">
+                                                                            <label class="form-check-label" for="r-vehicle">Railway Vehicle</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed"  value="" id="animal">
+                                                                            <label class="form-check-label" for="animal">Animal</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed"  value="" id="v-in-transport">
+                                                                            <label class="form-check-label" for="v-in-transport">Motor Vehicle in Transport</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed"  value="" id="p-vehicle">
+                                                                            <label class="form-check-label" for="p-vehicle">Parked Motor Vehicle</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed" value="" id="w-zone">
+                                                                            <label class="form-check-label" for="w-zone">Work Zone/Maintenance Equipment</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed" value="" id="s-cargo">
+                                                                            <label class="form-check-label" for="s-cargo">Struck by Falling Shifting Cargo</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="non-fixed" value="" id="x-other">
+                                                                            <label class="form-check-label" for="x-other">Other Non-Fixed Object</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Collision with Fixed Object</label>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input"  type="radio" name="fixed-o" value="" id="attenuator">
+                                                            <label class="form-check-label" for="attenuator">Impact Attenuator/Crash Cushion</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"   value="" id="o-structure">
+                                                            <label class="form-check-label" for="o-structure">Bridge Overhead Structure</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="b-pier">
+                                                            <label class="form-check-label" for="b-pier">Bridge Pier or Support</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="b-rail">
+                                                            <label class="form-check-label" for="b-rail">Bridge Rail</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="culvert">
+                                                            <label class="form-check-label" for="culvert">Culvert</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="curb">
+                                                            <label class="form-check-label" for="curb">Curb</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="ditch">
+                                                            <label class="form-check-label" for="ditch">Ditch</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="embankment">
+                                                            <label class="form-check-label" for="embankment">Embankment</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="g-face">
+                                                            <label class="form-check-label" for="g-face">Guardrail face</label>
+                                                        </div>
+
+
+                                                        <div class="form-check">
+                                                            <input class="form-check-input"  type="radio" name="fixed-o" value="" id="g-end">
+                                                            <label class="form-check-label" for="g-end">Guardrail End</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"   value="" id="c-barrier">
+                                                            <label class="form-check-label" for="c-barrier">Cable Barrier</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="concrete-b">
+                                                            <label class="form-check-label" for="concrete-b">Concrete Barrier</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="o-barrier">
+                                                            <label class="form-check-label" for="o-barrier">Other Barrier</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="tree">
+                                                            <label class="form-check-label" for="tree">Tree</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o"  value="" id="u-pole">
+                                                            <label class="form-check-label" for="u-pole">Utility Pole</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="t-sign">
+                                                            <label class="form-check-label" for="t-sign">Traffic Sign</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="t-signal">
+                                                            <label class="form-check-label" for="t-signal">Traffic Signal</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="o-support">
+                                                            <label class="form-check-label" for="g-face">Other Post, Pole, Support</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="fence">
+                                                            <label class="form-check-label" for="fence">Fence</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="mailbox">
+                                                            <label class="form-check-label" for="mailbox">Mailbox</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="building">
+                                                            <label class="form-check-label" for="building">Building</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="fixed-o" value="" id="o-fixed-object">
+                                                            <label class="form-check-label" for="o-fixed-object">Other Fixed Object</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row p-4">
+                                    <div class="col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="sb-related">
+                                            <label class="form-check-label" for="sb-related">School Bus Related</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lev-related">
+                                            <label class="form-check-label" for="lev-related">Law Enforcement Vehicle Related</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="work-z">
+                                            <label class="form-check-label" for="work-z">Work Zone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-lg-12">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <div class="p-3">
+                                                <div class="row border">
+                                                    <div class="col-md-1 border-left"></div>
+                                                    <div class="col-md-6 border-left">
+                                                        <label class="control-label font-weight-bold">Filename</label>
+                                                    </div>
+                                                    <div class="col-md-5 border-left">
+                                                        <label class="control-label font-weight-bold">Size</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dropzone" id="doc-file">
+                                                <div class="dz-message">
+                                                    <i class="fa fa-upload text-muted"></i> Drop files to attach, or <a class="btn-link text-info" id="click-x" style="cursor: pointer;">browse.</a>
+                                                </div>
+                                            </div>
+                                            <div style="background: #fff6d9;">
+                                                <p style="padding: 1% 1%;">No storage has been set for this field. File uploads are disabled until storage is set up.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--driver start-->
+                    <div class="card mt-3">
+                        <div class="card-header bg-light">
+                            <h4 class="mb-0">Drivers</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Vehicle</label>
+                                                        <select class="form-control">
+                                                            <option value="">Select from vehicles identified</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Driver</label>
+                                                        <select class="form-control">
+                                                            <option value="">Driver</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <label class="control-label font-weight-bold">Vehicle Travelling</label>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input"  type="radio" name="v-travelling" value="" id="north">
+                                                        <label class="form-check-label" for="north">North</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="v-travelling"   value="" id="east">
+                                                        <label class="form-check-label" for="east">East</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="v-travelling"  value="" id="west">
+                                                        <label class="form-check-label" for="west">West</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="v-travelling"  value="" id="south">
+                                                        <label class="form-check-label" for="south">South</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="v-travelling"  value="" id="off-road">
+                                                        <label class="form-check-label" for="off-road">Off Road</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="v-travelling"  value="" id="vh-unknown">
+                                                        <label class="form-check-label" for="south">Unknown</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Estimated Speed</label>
+                                                        <input type="text" class="form-control" placeholder="Estimated Speed">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Posted Speed</label>
+                                                        <input type="text" class="form-control" placeholder="Posted Speed">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Total Lanes</label>
+                                                        <input type="text" class="form-control" placeholder="Total Lanes">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label font-weight-bold">Driver Statement</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header bg-light">
+                                                    <h4 class="mb-0">Driver</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row mt-3">
+
+                                                        <div class="col-lg-6">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="card bg-light">
+                                                                        <div class="card-body">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">Driver Distracted By</label>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input"  type="radio" name="ddb" value="" id="not-d">
+                                                                                    <label class="form-check-label" for="not-d">Not Distracted</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="ddb"   value="" id="e-com">
+                                                                                    <label class="form-check-label" for="e-com">Electronic Communication (Cell Phone)</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="ddb"  value="" id="electronic-o">
+                                                                                    <label class="form-check-label" for="electronic-o">Electronic Others (Music, etc)</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="ddb"  value="" id="oiv">
+                                                                                    <label class="form-check-label" for="oiv">Other inside vehicle</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="ddb"  value="" id="e-dis">
+                                                                                    <label class="form-check-label" for="e-dis">External Distraction</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="ddb" value="" id="texting">
+                                                                                    <label class="form-check-label" for="texting">Texting</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="ddb" value="" id="inattentive">
+                                                                                    <label class="form-check-label" for="inattentive">Inattentive</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="collision" value="" id="ddb-u">
+                                                                                    <label class="form-check-label" for="ddb-u">Unknown</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-3">
+                                                                <div class="col">
+                                                                    <div class="card bg-light">
+                                                                        <div class="card-body">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">Driver Condition at Time</label>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input"  type="radio" name="dct" value="" id="normal">
+                                                                                    <label class="form-check-label" for="normal">Normal</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct"   value="" id="asleep">
+                                                                                    <label class="form-check-label" for="asleep">Asleep or Fatigued</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct"  value="" id="ill">
+                                                                                    <label class="form-check-label" for="ill">Ill or Fainted</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct"  value="" id="seb">
+                                                                                    <label class="form-check-label" for="seb">Seizure, Epilepsy, Backout</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct"  value="" id="p-impaired">
+                                                                                    <label class="form-check-label" for="p-impaired">Physical Impaired</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct" value="" id="e-impaired">
+                                                                                    <label class="form-check-label" for="e-impaired">Emotionally Impaired</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct" value="" id="uia">
+                                                                                    <label class="form-check-label" for="uia">Under the influence of Alcohol</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct" value="" id="uid">
+                                                                                    <label class="form-check-label" for="uid">Under the influence of drugs</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct" value="" id="dct-o">
+                                                                                    <label class="form-check-label" for="dct-o">Others (in Narrative)</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="radio" name="dct" value="" id="dct-u">
+                                                                                    <label class="form-check-label" for="dct-u">Unknown</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="card bg-light">
+                                                                <div class="card-body">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Driver Contributing Actions</label>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"  type="radio" name="dca" value="" id="nca">
+                                                                            <label class="form-check-label" for="nca">No Contributing Action</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"   value="" id="oc">
+                                                                            <label class="form-check-label" for="oc">Operating Careless or Negligent</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="fyrw">
+                                                                            <label class="form-check-label" for="fyrw">Failed to Yield Right-of-Way</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="i-backing">
+                                                                            <label class="form-check-label" for="i-backing">Improper Backing</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="i-turn">
+                                                                            <label class="form-check-label" for="i-turn">Improper Turn</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="ftc">
+                                                                            <label class="form-check-label" for="ftc">Followed Too Closely</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="rrl">
+                                                                            <label class="form-check-label" for="rrl">Ran Red Light</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="dtfc">
+                                                                            <label class="form-check-label" for="dtfc">Drove Too for Conditions</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="rss">
+                                                                            <label class="form-check-label" for="rss">Ran Stop Sign</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"  type="radio" name="dca" value="" id="i-passing">
+                                                                            <label class="form-check-label" for="i-passing">Improper Passing</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"   value="" id="eps">
+                                                                            <label class="form-check-label" for="eps">Exceeded Posted Speed</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="wsww">
+                                                                            <label class="form-check-label" for="wsww">Wrong Side of Wrong Way</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="fkpl">
+                                                                            <label class="form-check-label" for="fkpl">Failed to keep in Proper Lane</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="ror">
+                                                                            <label class="form-check-label" for="ror">Ran Off Roadway</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca"  value="" id="dts">
+                                                                            <label class="form-check-label" for="dts">Disregard other Traffic Sign</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="drm">
+                                                                            <label class="form-check-label" for="drm">Disregard other Road Markings</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="ocs">
+                                                                            <label class="form-check-label" for="ocs">Over Correcting/Steering</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="swerved">
+                                                                            <label class="form-check-label" for="swerved">Swerved or Avoided: due to wind, slippery surface, MV, Object, Non Motorist</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="omv">
+                                                                            <label class="form-check-label" for="omv">Operated MV Erratically, Aggressively, Recklessly</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="dca" value="" id="dcs-o">
+                                                                            <label class="form-check-label" for="dcs-o">Other (in narrative)</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card mt-3">
+                                                <div class="card-header bg-light">
+                                                    <h4 class="mb-0">Alcohol/Drugs</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card bg-light">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="s-alcohol">
+                                                                        <label class="form-check-label" for="s-alcohol">Suspect Alcohol</label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Alcohol Tested</label>
+                                                                        <select class="form-control">
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Test Type</label>
+                                                                        <select class="form-control">
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Test Result Status</label>
+                                                                        <select class="form-control">
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Blood Alcohol Content</label>
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card bg-light mt-3">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="s-drugs">
+                                                                        <label class="form-check-label" for="s-drugs">Suspect Drugs</label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Drugs Tested</label>
+                                                                        <select class="form-control">
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Test Type</label>
+                                                                        <select class="form-control">
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label font-weight-bold">Test Result Status</label>
+                                                                        <select class="form-control">
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <label class="control-label font-weight-bold">Drugs Identified</label>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"  type="radio" name="di" value="" id="alcohol">
+                                                                        <label class="form-check-label" for="alcohol">Alcohol</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di" value="" id="amphetamines">
+                                                                        <label class="form-check-label" for="amphetamines">Amphetamines</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di"  value="" id="cocaine">
+                                                                        <label class="form-check-label" for="cocaine">Cocaine</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di"  value="" id="fentanyl">
+                                                                        <label class="form-check-label" for="fentanyl">Fentanyl</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di"  value="" id="marijuana">
+                                                                        <label class="form-check-label" for="marijuana">Marijuana</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di" value="" id="methamphetamines">
+                                                                        <label class="form-check-label" for="methamphetamines">Methamphetamines</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di" value="" id="opiates">
+                                                                        <label class="form-check-label" for="opiates">Opiates</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di" value="" id="phencyclidine">
+                                                                        <label class="form-check-label" for="phencyclidine">Phencyclidine (PCP)</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di" value="" id="tramadol">
+                                                                        <label class="form-check-label" for="tramadol">Tramadol</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di" value="" id="steroids">
+                                                                        <label class="form-check-label" for="steroids">Steroids</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="di" value="" id="di-o">
+                                                                        <label class="form-check-label" for="di-o">Other (in Narrative)</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--lab result files start-->
+                                            <div class="mt-3">
+                                                <div class="p-3">
+                                                    <label class="control-label font-weight-bold">Lab Results</label>
+                                                    <div class="row border">
+                                                        <div class="col-md-1 border-left"></div>
+                                                        <div class="col-md-6 border-left">
+                                                            <label class="control-label font-weight-bold">Filename</label>
+                                                        </div>
+                                                        <div class="col-md-5 border-left">
+                                                            <label class="control-label font-weight-bold">Size</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dropzone" id="lab-files" style="background: white;">
+                                                    <div class="dz-message">
+                                                        <i class="fa fa-upload text-muted"></i> Drop files to attach, or <a class="btn-link text-info" id="click-y" style="cursor: pointer;">browse.</a>
+                                                    </div>
+                                                </div>
+                                                <div style="background: #fff6d9;">
+                                                    <p style="padding: 1% 1%;">No storage has been set for this field. File uploads are disabled until storage is set up.</p>
+                                                </div>
+                                            </div>
+                                            <!--lab result files end-->
+                                            <div class="card mt-3">
+                                                <div class="card-header bg-light">
+                                                    <h4 class="mb-0">Witnesses</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="m-3">
+                                                        <button type="submit" class="btn btn-primary">Add Witness</button>
+                                                    </div>
+                                                    <div class="card bg-light mt-3">
+                                                        <div class="card-body">
+
+                                                            <div class="card mt-3">
+                                                                <div class="card-header bg-light">
+                                                                    <h4 class="mb-0">Witnesses Statement</h4>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-4">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">Last Name</label>
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">First Name</label>
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">User ID (if applicable)</label>
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">Phone Number</label>
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">Email</label>
+                                                                                <input type="email" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">DL Number</label>
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">Address</label>
+                                                                                <select class="form-control">
+                                                                                    <option value=""></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label font-weight-bold">Witness Statement</label>
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="m-3">
+                                                                            <button type="submit" class="btn btn-primary">Add Witness</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--driver end-->
+
+
+
+                    <div class="form-actions mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="jquery-3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/dropzone.js"></script>
+<script type="text/javascript">
+    Dropzone.autoDiscover = false;
+    $(function() {
+        $("#doc-file").dropzone({
+            clickable: '#click-x',
+            addRemoveLinks: true
+        });
+
+        $("#lab-files").dropzone({
+            clickable: '#click-y',
+            addRemoveLinks: true
+        });
+    });
+</script>
+    </body>
+</html>
